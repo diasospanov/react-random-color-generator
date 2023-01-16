@@ -1,22 +1,51 @@
+import randomColor from 'randomcolor';
+import { useState } from 'react';
+
 export default function App() {
+  const [color, setColor] = useState(randomColor());
+  const testVariable = 'green';
+  // const [chosenColor, setChosenColor] = useState('');
   return (
-    <div>
+    <div
+      style={{
+        display: 'grid',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <h1>Random Color Generator</h1>
       <br />
-      <button onClick={() => {}}>Generate</button>
+      <button
+        onClick={() => {
+          setColor(randomColor());
+          console.log(color);
+        }}
+      >
+        Generate
+      </button>
       <br />
       <br />
-      <input onChange={(event) => {}}></input>
+      {/* <input
+        value={chosenColor}
+        onChange={(event) => {
+          setChosenColor(event.currentTarget.value);
+          console.log(chosenColor);
+        }}
+      ></input> */}
       <br />
       <br />
       <div
         style={{
-          backgroundColor: 'blue',
-          width: '155px',
+          backgroundColor: { color },
+          textAlign: 'center',
+          width: '300px',
+          height: '40px',
+          borderRadius: '20px',
           fontSize: '20px',
+          fontWeight: 'bold',
         }}
       >
-        Generated Color:
+        Generated Color: {color}
       </div>
     </div>
   );
