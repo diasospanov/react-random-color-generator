@@ -3,8 +3,7 @@ import { useState } from 'react';
 
 export default function App() {
   const [color, setColor] = useState(randomColor());
-  // const generatedColor = setColor(randomColor());
-  // const [chosenColor, setChosenColor] = useState('');
+
   return (
     <div
       style={{
@@ -18,20 +17,14 @@ export default function App() {
       <button
         onClick={() => {
           setColor(randomColor());
-          // console.log(generatedColor);
+
         }}
       >
         Generate
       </button>
       <br />
       <br />
-      {/* <input
-        value={chosenColor}
-        onChange={(event) => {
-          setChosenColor(event.currentTarget.value);
-          console.log(chosenColor);
-        }}
-      ></input> */}
+
       <br />
       <br />
       <div
