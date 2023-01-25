@@ -17,7 +17,6 @@ export default function App() {
       <button
         onClick={() => {
           setColor(randomColor());
-
         }}
       >
         Generate
